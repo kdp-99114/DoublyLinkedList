@@ -23,7 +23,7 @@ public class DoublyLinkedList<E> implements ListADT<E> {
 
     }
 
-    private static class Node {
+    private static class Node<E> {
     }
 
 }

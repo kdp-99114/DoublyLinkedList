@@ -24,6 +24,17 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     }
 
     private static class Node<E> {
+        private E data;
+        private Node<E> previous;
+        private Node<E> next;
+
+        public Node(E data, Node<E> previous, Node<E> next) {
+            this.data = data;
+            this.previous = previous;
+            this.next = next;
+        }
+
+
     }
 
 }

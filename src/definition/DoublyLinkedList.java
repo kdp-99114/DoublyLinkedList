@@ -9,7 +9,7 @@ public class DoublyLinkedList<E> implements ListADT<E> {
 
 
     @Override
-    public boolean add(Object item) {
+    public boolean add(E item) {
         return false;
     }
 
@@ -19,7 +19,7 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     }
 
     @Override
-    public int search(Object item) {
+    public int search(E item) {
         return 0;
     }
 

@@ -33,6 +33,7 @@ public class DoublyLinkedList<E> implements ListADT<E> {
         } else {
             newNode = new Node<>(item, node, node.getNext());
             node.next = newNode;
+            newNode.getNext().previous = newNode;
         }
         size++;
         return true;

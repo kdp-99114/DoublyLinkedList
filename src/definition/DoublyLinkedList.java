@@ -22,4 +22,8 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     public void sort() {
 
     }
+
+    private static class Node {
+    }
+
 }

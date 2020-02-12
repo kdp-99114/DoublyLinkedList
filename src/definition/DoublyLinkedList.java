@@ -3,6 +3,11 @@ package definition;
 import adt.ListADT;
 
 public class DoublyLinkedList<E> implements ListADT<E> {
+
+    private Node<E> front = null;
+    private int size = 0;
+
+
     @Override
     public boolean add(Object item) {
         return false;
@@ -21,6 +26,20 @@ public class DoublyLinkedList<E> implements ListADT<E> {
     @Override
     public void sort() {
 
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("[");
+        Node<E> temp = front;
+        for (int i = 0; i < size && temp != null; i++) {
+            E data = temp.getData();
+            sb.append(data);
+            sb.append((i < size - 1) ? "," : "");
+            temp = temp.getNext();
+        }
+        sb.append("]");
+        return sb.toString();
     }
 
     private static class Node<E> {

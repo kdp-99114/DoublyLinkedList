@@ -39,7 +39,15 @@ public class DoublyLinkedList<E> implements ListADT<E> {
         return true;
     }
 
-
+    public boolean add(int index, E item) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) {
+            return addFirst(item);
+        } else {
+            return addAfter(getNode(index - 1), item);
+        }
+    }
 
     @Override
     public boolean add(E item) {

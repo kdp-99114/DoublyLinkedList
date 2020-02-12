@@ -1,12 +1,30 @@
 package definition;
 
 import adt.ListADT;
+import jdk.dynalink.NamedOperation;
 
 public class DoublyLinkedList<E> implements ListADT<E> {
 
     private Node<E> head = null;
     private Node<E> tail = null;
     private int size = 0;
+
+    private Node<E> getNode(int index) {
+        Node<E> response = head;
+        for (int i = 0; i < index && response != null; i++) {
+            response = response.getNext();
+        }
+        return response;
+    }
+
+    private boolean addFirst(E item) {
+        Node<E> node = new Node<E>(item, head, tail);
+        head = node;
+        tail = node;
+        size++;
+        return true;
+    }
+
 
 
     @Override

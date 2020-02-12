@@ -25,6 +25,20 @@ public class DoublyLinkedList<E> implements ListADT<E> {
         return true;
     }
 
+    private boolean addAfter(Node<E> node, E item) {
+        Node<E> newNode = null;
+        if (node.next == null) {
+            newNode = new Node<>(item, node, tail);
+            node.next = newNode;
+            tail = newNode;
+        } else {
+            newNode = new Node<>(item, node, node.getNext());
+            node.next = newNode;
+        }
+        size++;
+        return true;
+    }
+
 
 
     @Override
